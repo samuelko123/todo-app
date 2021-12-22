@@ -1,0 +1,58 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react/display-name": "off",
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "curly": "error",
+    "eqeqeq": [
+      "error",
+      "always"
+    ],
+    "no-console": "warn",
+    "no-var": "error",
+    "no-unused-vars": "error",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": {
+          "multiline": true
+        },
+        "ImportDeclaration": {
+          "multiline": true,
+          "minProperties": 2
+        },
+        "ExportDeclaration": {
+          "multiline": true,
+          "minProperties": 2
+        }
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "prefer-const": "error",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ]
+  }
+}
