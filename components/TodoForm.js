@@ -1,4 +1,7 @@
-import { TextField } from '.'
+import {
+    Button,
+    TextField,
+} from '.'
 
 import { addTodo } from '../app/slices/todoSlice'
 import { useDispatch } from 'react-redux'
@@ -33,12 +36,14 @@ export const TodoForm = () => {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <TextField
-                label='New Todo'
+                label='Enter Todo'
                 {...register('new-todo')}
             />
-            <button
+            <Button
                 type="submit"
-            >Submit</button>
+            >
+                Add
+            </Button>
         </form>
     )
 }
