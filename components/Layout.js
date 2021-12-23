@@ -10,6 +10,9 @@ export const Header = styled.header`
 `
 
 const Main = styled.main`
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 1rem;
     width: 80%;
     max-width: 100%;
     margin: 1rem auto;
