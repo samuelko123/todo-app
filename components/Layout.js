@@ -19,22 +19,22 @@ const Main = styled.main`
 `
 
 export const Layout = (props) => {
-    const { title, children } = props
+	const { title, children } = props
 
-    return (
-        <>
-            <Head>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <title>
-                    {title}
-                </title>
-            </Head>
-            <Header>
-                <Link href='/'>{title}</Link>
-            </Header>
-            <Main>
-                {children}
-            </Main>
-        </>
-    )
+	return (
+		<>
+			<Head>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<title>
+					{title}
+				</title>
+			</Head>
+			<Header>
+				<Link href='/'>{title}</Link>
+			</Header>
+			<Main>
+				{children}
+			</Main>
+		</>
+	)
 }

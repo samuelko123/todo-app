@@ -1,5 +1,8 @@
 {
   "extends": "next/core-web-vitals",
+  "plugins": [
+    "import-newlines"
+  ],
   "rules": {
     "react/display-name": "off",
     "comma-dangle": [
@@ -11,9 +14,18 @@
       "error",
       "always"
     ],
+    "import-newlines/enforce": [
+      "error",
+      1
+    ],
+    "indent": [
+      "error",
+      "tab"
+    ],
     "no-console": "warn",
-    "no-var": "error",
+    "no-multi-spaces": "error",
     "no-unused-vars": "error",
+    "no-var": "error",
     "object-curly-newline": [
       "error",
       {

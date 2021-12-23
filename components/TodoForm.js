@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 import {
-    Button,
-    TextField,
+	Button,
+	TextField,
 } from '.'
 
 import { addTodo } from '../app/slices/todoSlice'
@@ -18,43 +18,43 @@ export const TodoFormRow = styled.div`
 `
 
 export const TodoForm = () => {
-    const dispatch = useDispatch()
+	const dispatch = useDispatch()
 
-    const {
-        handleSubmit,
-        register,
-        reset,
-        setFocus,
-    } = useForm()
+	const {
+		handleSubmit,
+		register,
+		reset,
+		setFocus,
+	} = useForm()
 
-    const onSubmit = data => {
-        dispatch(addTodo(
-            {
-                name: data['new-todo'],
-                completed: false,
-            }
-        ))
+	const onSubmit = data => {
+		dispatch(addTodo(
+			{
+				name: data['new-todo'],
+				completed: false,
+			}
+		))
 
-        reset()
-    }
+		reset()
+	}
 
-    useEffect(() => {
-        setFocus('new-todo')
-    }, [setFocus])
+	useEffect(() => {
+		setFocus('new-todo')
+	}, [setFocus])
 
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <TodoFormRow>
-                <TextField
-                    label='Enter Todo'
-                    {...register('new-todo')}
-                />
-                <Button
-                    type="submit"
-                >
+	return (
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<TodoFormRow>
+				<TextField
+					label='Enter Todo'
+					{...register('new-todo')}
+				/>
+				<Button
+					type="submit"
+				>
                     Add
-                </Button>
-            </TodoFormRow>
-        </form>
-    )
+				</Button>
+			</TodoFormRow>
+		</form>
+	)
 }

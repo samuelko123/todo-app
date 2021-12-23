@@ -1,7 +1,7 @@
 import {
-    forwardRef,
-    useEffect,
-    useState,
+	forwardRef,
+	useEffect,
+	useState,
 } from 'react'
 
 import { v4 as uuidv4 } from 'uuid'
@@ -24,19 +24,19 @@ const Input = styled.input`
 `
 
 export const TextField = forwardRef((props, ref) => {
-    const { label } = props
-    const [id, setId] = useState(null)
+	const { label } = props
+	const [id, setId] = useState(null)
 
-    useEffect(() => {
-        setId(uuidv4())
-    }, [])
+	useEffect(() => {
+		setId(uuidv4())
+	}, [])
 
-    return (
-        <>
-            <HiddenLabel htmlFor={id}>
-                {label}
-            </HiddenLabel>
-            <Input id={id} ref={ref} placeholder={label} {...props} />
-        </>
-    )
+	return (
+		<>
+			<HiddenLabel htmlFor={id}>
+				{label}
+			</HiddenLabel>
+			<Input id={id} ref={ref} placeholder={label} {...props} />
+		</>
+	)
 })

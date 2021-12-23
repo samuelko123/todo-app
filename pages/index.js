@@ -1,15 +1,15 @@
 import {
-  TodoForm,
-  TodoList,
+	TodoForm,
+	TodoList,
 } from '../components'
 
 const Page = () => {
-  return (
-    <>
-      <TodoForm />
-      <TodoList />
-    </>
-  )
+	return (
+		<>
+			<TodoForm />
+			<TodoList />
+		</>
+	)
 }
 
 export default Page
