@@ -31,6 +31,7 @@ export const TodoText = styled.div`
     word-break: break-all;
     max-width: 100%;
     justify-self: start;
+    text-decoration: ${props => props.completed ? 'line-through' : 'none' };
 `
 
 export const TodoList = () => {
@@ -46,7 +47,7 @@ export const TodoList = () => {
                             label={'Complete Todo'}
                             onClick={() => dispatch(toggleTodo(index))}
                         />
-                        <TodoText>
+                        <TodoText completed={todo.completed}>
                             {todo.name}
                         </TodoText>
                         <DeleteButton
