@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
-export const TodoFormRow = styled.div`
+const TodoFormRow = styled.div`
     display: grid;
     grid-template-columns: 1fr 4rem;
     column-gap: 1rem;

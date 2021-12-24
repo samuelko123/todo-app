@@ -18,14 +18,3 @@ export const Button = styled.button`
     color: ${props => props.theme.primary};
   }
 `
-
-export const DeleteButton = styled(Button)`
-  background-color: ${props => props.theme.danger};
-  border: 2px solid ${props => props.theme.danger};
-  color: ${props => props.theme.light};
-
-  &:hover {
-    background-color: ${props => props.theme.light};
-    color: ${props => props.theme.danger};
-  }
-`

@@ -13,12 +13,11 @@ import {
 
 import {
 	Checkbox,
-	DeleteButton,
 	List,
 	ListItem,
 } from './index'
 
-export const TodoListItem = styled(ListItem)`
+const TodoListItem = styled(ListItem)`
     display: grid;
     grid-template-columns: 2rem 1fr 4rem;
     column-gap: 1rem;
@@ -26,12 +25,23 @@ export const TodoListItem = styled(ListItem)`
     justify-items: center;
 `
 
-export const TodoText = styled.div`
+const TodoText = styled.div`
     word-wrap: break-word;
     word-break: break-all;
     max-width: 100%;
     justify-self: start;
-    text-decoration: ${props => props.completed ? 'line-through' : 'none' };
+    text-decoration: ${props => props.completed ? 'line-through' : 'none'};
+`
+
+const DeleteButton = styled(Button)`
+  background-color: ${props => props.theme.danger};
+  border-color: ${props => props.theme.danger};
+  color: ${props => props.theme.light};
+
+  &:hover {
+    background-color: ${props => props.theme.light};
+    color: ${props => props.theme.danger};
+  }
 `
 
 export const TodoList = () => {
@@ -53,7 +63,7 @@ export const TodoList = () => {
 						<DeleteButton
 							onClick={() => dispatch(deleteTodo(index))}
 						>
-                            Delete
+							Delete
 						</DeleteButton>
 					</TodoListItem>
 				)
