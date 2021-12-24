@@ -1,6 +1,4 @@
-import {
-	forwardRef,
-} from 'react'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 import { HiddenLabel } from '.'
 
