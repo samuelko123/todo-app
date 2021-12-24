@@ -46,7 +46,8 @@ export const TodoForm = () => {
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<TodoFormRow>
 				<TextField
-					label='Enter Todo'
+					placeholder='Enter New Todo'
+					label='Enter New Todo'
 					{...register('new-todo')}
 				/>
 				<Button

@@ -1,14 +1,11 @@
 import {
 	forwardRef,
-	useEffect,
-	useState,
 } from 'react'
-
-import { v4 as uuidv4 } from 'uuid'
 import styled from 'styled-components'
 import { HiddenLabel } from '.'
 
 const Input = styled.input`
+	width: 100%;
     background-color: ${props => props.theme.light};
     border: 2px solid ${props => props.theme.lightgray};
     color: ${props => props.theme.dark};
@@ -24,19 +21,17 @@ const Input = styled.input`
 `
 
 export const TextField = forwardRef((props, ref) => {
-	const { label } = props
-	const [id, setId] = useState(null)
-
-	useEffect(() => {
-		setId(uuidv4())
-	}, [])
+	const { label, ...inputProps } = props
 
 	return (
-		<>
-			<HiddenLabel htmlFor={id}>
+		<label>
+			<HiddenLabel>
 				{label}
 			</HiddenLabel>
-			<Input id={id} ref={ref} placeholder={label} {...props} />
-		</>
+			<Input
+				ref={ref}
+				{...inputProps}
+			/>
+		</label>
 	)
 })

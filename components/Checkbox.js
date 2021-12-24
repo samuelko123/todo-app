@@ -1,16 +1,11 @@
 import styled from 'styled-components'
-
+import { HiddenLabel } from './index'
 import {
 	forwardRef,
-	useEffect,
-	useState,
 } from 'react'
 
-import { v4 as uuidv4 } from 'uuid'
-import { HiddenLabel } from '.'
-
 const Input = styled.input.attrs({
-	type: 'checkbox', 
+    type: 'checkbox',
 })`
     border: 2px solid ${props => props.theme.primary};
     background-color: ${props => props.theme.light};
@@ -36,17 +31,17 @@ const Input = styled.input.attrs({
 `
 
 export const Checkbox = forwardRef((props, ref) => {
-	const { label } = props
-	const [id, setId] = useState(null)
+    const { label, ...inputProps } = props
 
-	useEffect(() => {
-		setId(uuidv4())
-	}, [])
-
-	return (
-		<>
-			<Input id={id} ref={ref} {...props} />
-			<HiddenLabel htmlFor={id}>{label}</HiddenLabel>
-		</>
-	)
+    return (
+        <label>
+            <Input
+                ref={ref}
+                {...inputProps}
+            />
+            <HiddenLabel>
+                {label}
+            </HiddenLabel>
+        </label>
+    )
 })
