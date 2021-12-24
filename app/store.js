@@ -18,7 +18,7 @@ import {
   todosReducer
 } from './slices/todoSlice'
 
-import storage from 'redux-persist/lib/storage'
+import storage from "./storage-persist"
 
 const rootReducer = combineReducers({
   todos: todosReducer,
