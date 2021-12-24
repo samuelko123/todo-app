@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 import styled from 'styled-components'
-import { HiddenLabel } from '.'
+import { HiddenLabel } from './index'
 
 const Input = styled.input`
 	width: 100%;
