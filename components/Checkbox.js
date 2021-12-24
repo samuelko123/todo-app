@@ -2,9 +2,7 @@ import styled from 'styled-components'
 import { HiddenLabel } from './index'
 import { forwardRef } from 'react'
 
-const Input = styled.input.attrs({
-	type: 'checkbox',
-})`
+const Input = styled.input.attrs({ type: 'checkbox' })`
     border: 2px solid ${props => props.theme.primary};
     background-color: ${props => props.theme.light};
     margin: 0;
@@ -29,7 +27,10 @@ const Input = styled.input.attrs({
 `
 
 export const Checkbox = forwardRef((props, ref) => {
-	const { label, ...inputProps } = props
+	const {
+		label,
+		...inputProps,
+	} = props
 
 	return (
 		<label>

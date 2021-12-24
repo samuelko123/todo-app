@@ -19,7 +19,10 @@ const Main = styled.main`
 `
 
 export const Layout = (props) => {
-	const { title, children } = props
+	const {
+		title,
+		children,
+	} = props
 
 	return (
 		<>

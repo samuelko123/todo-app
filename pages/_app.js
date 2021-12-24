@@ -35,7 +35,10 @@ const theme = {
 	lightgray: 'rgba(0,0,0,0.125)',
 }
 
-const App = ({ Component, pageProps }) => {
+const App = ({
+	Component,
+	pageProps,
+}) => {
 	return (
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
