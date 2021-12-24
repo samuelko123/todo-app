@@ -1,6 +1,6 @@
 export {
 	Button, DeleteButton, 
-} from './Button'
+} from './Buttons'
 export { Checkbox } from './Checkbox'
 export { HiddenLabel } from './HiddenLabel'
 export { Layout } from './Layout'
