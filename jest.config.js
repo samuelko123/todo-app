@@ -1,10 +1,4 @@
-const nextJest = require('next/jest')
-
-const createJestConfig = nextJest({
-  dir: './',
-})
-
-const customJestConfig = {
+module.exports = {
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: "coverage",
@@ -14,6 +8,7 @@ const customJestConfig = {
   testMatch: [
     "<rootDir>/__tests__/**/*.test.js"
   ],
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
+  },
 }
-
-module.exports = createJestConfig(customJestConfig)
