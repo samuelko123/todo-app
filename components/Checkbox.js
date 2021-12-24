@@ -29,7 +29,7 @@ const Input = styled.input.attrs({ type: 'checkbox' })`
 export const Checkbox = forwardRef((props, ref) => {
 	const {
 		label,
-		...inputProps,
+		...inputProps
 	} = props
 
 	return (

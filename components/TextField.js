@@ -21,7 +21,7 @@ const Input = styled.input`
 export const TextField = forwardRef((props, ref) => {
 	const {
 		label,
-		...inputProps,
+		...inputProps
 	} = props
 
 	return (
