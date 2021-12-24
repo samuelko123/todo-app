@@ -16,7 +16,7 @@ import {
 	DeleteButton,
 	List,
 	ListItem,
-} from '.'
+} from './index'
 
 export const TodoListItem = styled(ListItem)`
     display: grid;

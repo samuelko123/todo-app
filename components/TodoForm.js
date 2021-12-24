@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {
 	Button,
 	TextField,
-} from '.'
+} from './index'
 
 import { addTodo } from '../app/slices/todoSlice'
 import { useDispatch } from 'react-redux'

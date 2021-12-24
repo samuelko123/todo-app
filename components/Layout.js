@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styled from 'styled-components'
-import { Link } from '.'
+import { Link } from './index'
 
 export const Header = styled.header`
     padding: 1rem;
