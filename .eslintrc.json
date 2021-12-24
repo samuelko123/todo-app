@@ -1,7 +1,18 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:jest-dom/recommended"
+  ],
   "plugins": [
-    "import-newlines"
+    "import-newlines",
+    "jest-dom",
+    "testing-library"
+  ],
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    }
   ],
   "rules": {
     "react/display-name": "off",
@@ -24,7 +35,7 @@
     ],
     "no-console": "warn",
     "no-multi-spaces": "error",
-    "no-unused-vars": "error",
+    "no-unused-vars": "warn",
     "no-var": "error",
     "object-curly-newline": [
       "error",

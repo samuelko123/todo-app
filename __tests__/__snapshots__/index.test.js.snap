@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+<div>
+  <header
+    class="sc-hKwDye eQxxWy"
+  >
+    <a
+      class="sc-jRQBWg hqNtUe"
+      href="/"
+    >
+      Todo App
+    </a>
+  </header>
+  <main
+    class="sc-eCImPb jQCgLu"
+  >
+    <form>
+      <div
+        class="sc-pVTFL jqSRY"
+      >
+        <label>
+          <span
+            class="sc-dkPtRN bthYoc"
+          >
+            Enter New Todo
+          </span>
+          <input
+            class="sc-furwcr lcpUeq"
+            name="new-todo"
+            placeholder="Enter New Todo"
+          />
+        </label>
+        <button
+          class="sc-bdvvtL fvHLMP"
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
+    </form>
+    <ul
+      class="sc-gKclnd bVSncq"
+    />
+  </main>
+</div>
+`;

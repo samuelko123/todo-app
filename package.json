@@ -5,7 +5,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix"
+    "lint": "next lint --fix",
+    "pretest": "yarn lint",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
@@ -15,13 +17,16 @@
     "react-hook-form": "^7.22.2",
     "react-redux": "^7.2.6",
     "redux-persist": "^6.0.0",
-    "styled-components": "^5.3.3",
-    "uuid": "^8.3.2"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^2.0.2",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
-    "eslint-plugin-import-newlines": "^1.1.7"
+    "eslint-plugin-import-newlines": "^1.1.7",
+    "eslint-plugin-jest-dom": "^3.9.2",
+    "eslint-plugin-testing-library": "^5.0.1",
+    "jest": "^27.4.5"
   }
 }
