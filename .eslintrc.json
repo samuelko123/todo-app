@@ -47,6 +47,14 @@
     ],
     "no-console": "warn",
     "no-multi-spaces": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 0,
+        "maxBOF": 0
+      }
+    ],
     "no-unused-vars": "warn",
     "no-var": "error",
     "object-curly-newline": [
