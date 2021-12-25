@@ -32,7 +32,8 @@ exports[`should render correctly 1`] = `
           />
         </label>
         <button
-          class="sc-bdvvtL fvHLMP"
+          class="sc-bdvvtL dpejaY"
+          disabled=""
           type="submit"
         >
           Add

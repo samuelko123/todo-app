@@ -21,11 +21,14 @@ export const TodoForm = () => {
 	const dispatch = useDispatch()
 
 	const {
+		formState: { isValid },
 		handleSubmit,
 		register,
 		reset,
 		setFocus,
-	} = useForm()
+	} = useForm({
+		mode: 'onChange'
+	})
 
 	const onSubmit = data => {
 		dispatch(addTodo(
@@ -48,12 +51,13 @@ export const TodoForm = () => {
 				<TextField
 					placeholder='Enter New Todo'
 					label='Enter New Todo'
-					{...register('new-todo')}
+					{...register('new-todo', { required: true })}
 				/>
 				<Button
 					type="submit"
+					disabled={!isValid}
 				>
-                    Add
+					Add
 				</Button>
 			</TodoFormRow>
 		</form>

@@ -17,15 +17,30 @@ it('should render correctly', async () => {
 
 	// Arrange
 	const todoText = 'Test Todo Item'
-	const list = screen.getByRole('list')
 	const textbox = screen.getByRole('textbox', { name: 'Enter New Todo' })
 	const btnAdd = screen.getByRole('button', { name: 'Add' })
+
+	// Assert - Before
+	expect(textbox).toHaveFocus()
+	expect(btnAdd).toBeDisabled()
+
+	// Action
+	userEvent.type(textbox, todoText)
+
+	// Assert - After
+	await waitFor(() => {
+		expect(btnAdd).not.toBeDisabled()
+	})
+
+	//============================================================
+
+	// Arrange
+	const list = screen.getByRole('list')
 
 	// Assert - Before
 	expect(list.children.length).toEqual(0)
 
 	// Action
-	userEvent.type(textbox, todoText)
 	userEvent.click(btnAdd)
 
 	// Assert - After
