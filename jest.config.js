@@ -2,6 +2,7 @@ module.exports = {
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: "coverage",
+  coveragePathIgnorePatterns: ['<rootDir>/app/storage-persist.js'],
   maxWorkers: "50%",
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jest-environment-jsdom',

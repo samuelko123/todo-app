@@ -26,7 +26,7 @@ const TodoListItem = styled(ListItem)`
     justify-items: center;
 `
 
-const TodoText = styled.div`
+const TodoText = styled.span.attrs({ role: 'listitemtext' })`
     word-wrap: break-word;
     word-break: break-all;
     max-width: 100%;
