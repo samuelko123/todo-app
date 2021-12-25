@@ -33,6 +33,7 @@
     "eslint-plugin-jest-dom": "^3.9.2",
     "eslint-plugin-newline-destructuring": "^1.0.1",
     "eslint-plugin-testing-library": "^5.0.1",
-    "jest": "^27.4.5"
+    "jest": "^27.4.5",
+    "jest-styled-components": "^7.0.8"
   }
 }
