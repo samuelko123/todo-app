@@ -13,10 +13,6 @@ export const Button = styled.button`
   transition-duration: 0.2s;
   cursor: pointer;
 
-  &:disabled:hover {
-
-  }
-
   &:hover:not(:disabled) {
     background-color: ${props => props.theme.light};
     color: ${props => props.theme.primary};
