@@ -57,7 +57,7 @@ it('should render correctly', async () => {
 
 	// Arrange
 	const checkbox = screen.getByRole('checkbox', 'Complete Todo')
-	const listItem = screen.getByRole('listitemtext', todoText)
+	const listItem = screen.getByText(todoText)
 
 	// Assert - Before
 	expect(checkbox).not.toBeChecked()

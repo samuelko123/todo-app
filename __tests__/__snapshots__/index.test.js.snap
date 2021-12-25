@@ -132,6 +132,7 @@ exports[`should render correctly 1`] = `
     </form>
     <ul
       class="c7"
+      role="list"
     />
   </main>
 </div>
