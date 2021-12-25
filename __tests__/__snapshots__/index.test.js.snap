@@ -3,30 +3,30 @@
 exports[`should render correctly 1`] = `
 <div>
   <header
-    class="sc-hKwDye eQxxWy"
+    class="sc-jRQBWg chAxVJ"
   >
     <a
-      class="sc-jRQBWg hqNtUe"
+      class="sc-iCfMLu hZvAbB"
       href="/"
     >
       Todo App
     </a>
   </header>
   <main
-    class="sc-eCImPb jQCgLu"
+    class="sc-gKclnd gNNLtv"
   >
     <form>
       <div
-        class="sc-pVTFL jqSRY"
+        class="sc-kDTinF hxjcpG"
       >
         <label>
           <span
-            class="sc-dkPtRN bthYoc"
+            class="sc-hKwDye kxofHE"
           >
             Enter New Todo
           </span>
           <input
-            class="sc-furwcr lcpUeq"
+            class="sc-jrQzAO ifeuhU"
             name="new-todo"
             placeholder="Enter New Todo"
           />
@@ -41,7 +41,7 @@ exports[`should render correctly 1`] = `
       </div>
     </form>
     <ul
-      class="sc-gKclnd bVSncq"
+      class="sc-furwcr eKOzAU"
     />
   </main>
 </div>

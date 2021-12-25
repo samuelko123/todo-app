@@ -56,7 +56,8 @@ export const TodoList = () => {
 					<TodoListItem key={index}>
 						<Checkbox
 							label={'Complete Todo'}
-							onClick={() => dispatch(toggleTodo(index))}
+							onChange={() => dispatch(toggleTodo(index))}
+							defaultChecked={todo.completed}
 						/>
 						<TodoText completed={todo.completed}>
 							{todo.name}

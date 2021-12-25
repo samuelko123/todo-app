@@ -27,7 +27,7 @@ export const TodoForm = () => {
 		reset,
 		setFocus,
 	} = useForm({
-		mode: 'onChange'
+		mode: 'onChange',
 	})
 
 	const onSubmit = data => {
