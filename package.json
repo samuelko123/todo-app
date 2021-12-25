@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "test": "jest"
+    "test": "jest",
+    "codecov-upload": "node ./node_modules/.bin/codecov"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
@@ -24,6 +25,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "babel-jest": "^27.4.5",
+    "codecov": "^3.8.3",
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
     "eslint-plugin-import-newlines": "^1.1.7",
