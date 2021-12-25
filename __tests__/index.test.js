@@ -8,13 +8,12 @@ import App from '../pages/_app'
 import Page from '../pages/index'
 import userEvent from '@testing-library/user-event'
 
-
 it('should render correctly', async () => {
 	// Snapshot test
 	const { container } = render(<App Component={Page} />)
 	expect(container).toMatchSnapshot()
 
-
+	//============================================================
 
 	// Arrange
 	const todoText = 'Test Todo Item'
@@ -39,7 +38,7 @@ it('should render correctly', async () => {
 		expect(list.children[0]).toHaveTextContent(todoText)
 	})
 
-
+	//============================================================
 
 	// Arrange
 	const checkbox = screen.getByRole('checkbox', 'Complete Todo')
@@ -67,7 +66,7 @@ it('should render correctly', async () => {
 		expect(listItem).toHaveStyle('text-decoration: none')
 	})
 
-
+	//============================================================
 
 	// Arrange
 	const btnDelete = screen.getByRole('button', { name: 'Delete' })
@@ -79,4 +78,6 @@ it('should render correctly', async () => {
 	await waitFor(() => {
 		expect(list.children.length).toEqual(0)
 	})
+
+	//============================================================
 })
