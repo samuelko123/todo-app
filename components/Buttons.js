@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Button = styled.button`
-  background-color: ${props => props.theme.primary};
-  border: 2px solid ${props => props.theme.primary};
+  background-color: ${props => props.color ? props.theme[props.color] : props.theme.primary};
+  border: 2px solid ${props => props.color ? props.theme[props.color] : props.theme.primary};
   color: ${props => props.theme.light};
   padding: 0.25rem 0.5rem;
   font-size: 1rem;
@@ -20,28 +20,14 @@ export const Button = styled.button`
 
   &:hover:not(:disabled) {
     background-color: ${props => props.theme.light};
-    color: ${props => props.theme.primary};
+    color: ${props => props.color ? props.theme[props.color] : props.theme.primary};
   }
 `
 
-export const DeleteButton = styled(Button)`
-  background-color: ${props => props.theme.danger};
-  border-color: ${props => props.theme.danger};
-  color: ${props => props.theme.light};
+export const DeleteButton = (props) => {
+  return <Button color='danger' {...props} />
+}
 
-  &:hover:not(:disabled) {
-    background-color: ${props => props.theme.light};
-    color: ${props => props.theme.danger};
-  }
-`
-
-export const CancelButton = styled(Button)`
-  background-color: ${props => props.theme.gray};
-  border-color: ${props => props.theme.gray};
-  color: ${props => props.theme.light};
-
-  &:hover:not(:disabled) {
-    background-color: ${props => props.theme.light};
-    color: ${props => props.theme.gray};
-  }
-`
+export const CancelButton = (props) => {
+  return <Button color='gray' {...props} />
+}
