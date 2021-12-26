@@ -25,9 +25,9 @@ export const Button = styled.button`
 `
 
 export const DeleteButton = (props) => {
-  return <Button color='delete' {...props} />
+	return <Button color='delete' {...props} />
 }
 
 export const CancelButton = (props) => {
-  return <Button color='cancel' {...props} />
+	return <Button color='cancel' {...props} />
 }

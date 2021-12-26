@@ -9,7 +9,9 @@ export {
 } from './Hiddens'
 export { Layout } from './Layout'
 export { Link } from './Link'
-export { List, ListItem } from './List'
+export {
+	List, ListItem, 
+} from './List'
 export { Modal } from './Modal'
 export { TextField } from './TextField'
 export { TodoForm } from './TodoForm'

@@ -67,43 +67,43 @@ const CloseButton = styled.button`
 `
 
 export const Modal = (props) => {
-    const {
-        title,
-        description,
-        footer,
-        isOpen,
-        setIsOpen,
-    } = props
+	const {
+		title,
+		description,
+		footer,
+		isOpen,
+		setIsOpen,
+	} = props
 
-    const handleClose = () => setIsOpen(false)
-    const handleContainerClick = (e) => {
-        e.stopPropagation()
-    }
+	const handleClose = () => setIsOpen(false)
+	const handleContainerClick = (e) => {
+		e.stopPropagation()
+	}
 
-    return (
-        isOpen &&
+	return (
+		isOpen &&
         createPortal(
-            <Backdrop onClick={handleClose}>
-                <ModalContainer onClick={handleContainerClick}>
-                    <ModalHeader>
-                        <ModalTitle>{title}</ModalTitle>
-                        <CloseButton
-                            onClick={handleClose}
-                            aria-label='Close'
-                        >
+        	<Backdrop onClick={handleClose}>
+        		<ModalContainer onClick={handleContainerClick}>
+        			<ModalHeader>
+        				<ModalTitle>{title}</ModalTitle>
+        				<CloseButton
+        					onClick={handleClose}
+        					aria-label='Close'
+        				>
                             &times;
-                        </CloseButton>
-                    </ModalHeader>
-                    <ModalBody>
-                        {description}
-                    </ModalBody>
-                    <ModalFooter>
-                        {footer}
-                    </ModalFooter>
-                </ModalContainer>
-            </Backdrop>
-            ,
-            document.getElementById('modal-root')
+        				</CloseButton>
+        			</ModalHeader>
+        			<ModalBody>
+        				{description}
+        			</ModalBody>
+        			<ModalFooter>
+        				{footer}
+        			</ModalFooter>
+        		</ModalContainer>
+        	</Backdrop>
+        	,
+        	document.getElementById('modal-root')
         )
-    )
+	)
 }
