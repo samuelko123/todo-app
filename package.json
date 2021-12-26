@@ -6,6 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
+    "pretest": "yarn lint",
     "test": "jest",
     "codecov-upload": "node ./node_modules/.bin/codecov"
   },
