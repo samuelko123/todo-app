@@ -4,7 +4,7 @@ import { HiddenLabel } from './index'
 
 const Input = styled.input`
 	width: 100%;
-    background-color: ${props => props.theme.light};
+    background-color: inherit;
     border: 2px solid ${props => props.theme.lightgray};
     color: ${props => props.theme.dark};
     padding: 0.25rem 0.5rem;

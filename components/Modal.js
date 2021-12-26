@@ -31,7 +31,7 @@ const ModalHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid ${props => props.theme.gray};
+    border-bottom: 1px solid ${props => props.theme.lightgray};
 `
 
 const ModalBody = styled.div`
@@ -45,7 +45,7 @@ const ModalFooter = styled.div`
     align-items: center;
     column-gap: 0.25rem;
     padding: 1rem;
-    border-top: 1px solid ${props => props.theme.gray};
+    border-top: 1px solid ${props => props.theme.lightgray};
 `
 
 const ModalTitle = styled.h4`

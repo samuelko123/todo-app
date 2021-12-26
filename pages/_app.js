@@ -28,11 +28,11 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
 	primary: '#0d5257',
-	light: '#f8f9fa',
+	light: '#eeeeee',
 	dark: '#215259',
 	gray: '#808080',
 	danger: '#dc3545',
-	lightgray: 'rgba(0,0,0,0.125)',
+	lightgray: 'rgba(0,0,0,0.25)',
 }
 
 const App = ({
