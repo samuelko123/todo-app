@@ -1,18 +1,27 @@
 import styled from 'styled-components'
 
 export const List = styled.ul.attrs({ role: 'list' })`
-    border: 0 solid ${props => props.theme.border};
-    border-width: 0 0 1px 1px;
     list-style: none;
     padding: 0;
     margin: 0;
 `
 
 export const ListItem = styled.li`
-    border: 0 solid ${props => props.theme.border};
-    border-width: 1px 1px 0 0;
+    border-color: ${props => props.theme.border};
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 0.25rem;
+
+    &:first-child {
+        border-top-width: 1px;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+    }
 `
