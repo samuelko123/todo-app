@@ -109,16 +109,12 @@ it('should render correctly', async () => {
 	const deleteDialog01 = screen.getByRole('dialog')
 	const cancelBtn = within(deleteDialog01).getByRole('button', { name: 'Cancel' })
 
-	// Assert - Before
-	expect(list.children.length).toEqual(1)
-
 	// Action
 	userEvent.click(cancelBtn)
 
-	// Assert - After
+	// Assert
 	await waitFor(() => {
 		expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
-		expect(list.children.length).toEqual(1)
 	})
 
 	//============================================================
@@ -129,7 +125,25 @@ it('should render correctly', async () => {
 		expect(screen.getByRole('dialog')).toHaveTextContent('Delete')
 	})
 	const deleteDialog02 = screen.getByRole('dialog')
-	const confirmBtn = within(deleteDialog02).getByRole('button', { name: 'Delete' })
+	const closeBtn = within(deleteDialog02).getByLabelText('Close')
+
+	// Action
+	userEvent.click(closeBtn)
+
+	// Assert
+	await waitFor(() => {
+		expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+	})
+
+	//============================================================
+
+	// Arrange
+	userEvent.click(deleteBtn)
+	await waitFor(() => {
+		expect(screen.getByRole('dialog')).toHaveTextContent('Delete')
+	})
+	const deleteDialog03 = screen.getByRole('dialog')
+	const confirmBtn = within(deleteDialog03).getByRole('button', { name: 'Delete' })
 
 	// Assert - Before
 	expect(list.children.length).toEqual(1)
