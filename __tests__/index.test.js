@@ -10,19 +10,24 @@ import App from '../pages/_app'
 import Page from '../pages/index'
 
 it('should render correctly', async () => {
-	// Snapshot test
-	const { container } = render(<App Component={Page} />)
-	expect(container).toMatchSnapshot()
+
+	//============================================================
+	
+	// Arrange
+	render(<App Component={Page} />)
+
+	// Assert
+	const textbox = screen.getByRole('textbox', { name: 'Enter New Todo' })
+	expect(textbox).toHaveFocus()
 
 	//============================================================
 
 	// Arrange
 	const todoText = 'Test Todo Item'
-	const textbox = screen.getByRole('textbox', { name: 'Enter New Todo' })
 	const btnAdd = screen.getByRole('button', { name: 'Add' })
 
 	// Assert - Before
-	expect(textbox).toHaveFocus()
+	
 	expect(btnAdd).toBeDisabled()
 
 	// Action
