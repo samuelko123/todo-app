@@ -12,8 +12,8 @@ import {
 } from '../app/slices/todoSlice'
 
 import {
-	Button,
 	Checkbox,
+	DeleteDialog,
 	List,
 	ListItem,
 } from './index'
@@ -34,17 +34,6 @@ const TodoText = styled.span`
     text-decoration: ${props => props.completed ? 'line-through' : 'none'};
 `
 
-const DeleteButton = styled(Button)`
-  background-color: ${props => props.theme.danger};
-  border-color: ${props => props.theme.danger};
-  color: ${props => props.theme.light};
-
-  &:hover {
-    background-color: ${props => props.theme.light};
-    color: ${props => props.theme.danger};
-  }
-`
-
 export const TodoList = () => {
 	const todos = useSelector(selectTodos)
 	const dispatch = useDispatch()
@@ -62,11 +51,10 @@ export const TodoList = () => {
 						<TodoText completed={todo.completed}>
 							{todo.name}
 						</TodoText>
-						<DeleteButton
-							onClick={() => dispatch(deleteTodo(index))}
-						>
-							Delete
-						</DeleteButton>
+						<DeleteDialog
+							itemName={todo.name}
+							onConfirm={() => dispatch(deleteTodo(index))}
+						/>
 					</TodoListItem>
 				)
 			}

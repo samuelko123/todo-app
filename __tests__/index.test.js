@@ -3,10 +3,11 @@ import {
 	screen,
 	waitFor,
 } from '@testing-library/react'
+import {within} from '@testing-library/dom'
+import userEvent from '@testing-library/user-event'
 
 import App from '../pages/_app'
 import Page from '../pages/index'
-import userEvent from '@testing-library/user-event'
 
 it('should render correctly', async () => {
 	// Snapshot test
@@ -84,12 +85,32 @@ it('should render correctly', async () => {
 	//============================================================
 
 	// Arrange
-	const btnDelete = screen.getByRole('button', { name: 'Delete' })
+	const deleteBtn = screen.getByRole('button', { name: 'Delete' })
+
+	// Assert - Before
+	expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
 
 	// Action
-	userEvent.click(btnDelete)
+	userEvent.click(deleteBtn)
 
-	// Assert
+	// Assert - After
+	await waitFor(() => {
+		expect(screen.getByRole('dialog')).toHaveTextContent('Delete')
+	})
+
+	//============================================================
+
+	// Arrange
+	const deleteDialog = screen.getByRole('dialog')
+	const confirmBtn = within(deleteDialog).getByRole('button', { name: 'Delete' })
+
+	// Assert - Before
+	expect(list.children.length).toEqual(1)
+
+	// Action
+	userEvent.click(confirmBtn)
+
+	// Assert - After
 	await waitFor(() => {
 		expect(list.children.length).toEqual(0)
 	})

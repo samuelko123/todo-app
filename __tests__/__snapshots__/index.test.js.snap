@@ -16,14 +16,14 @@ exports[`should render correctly 1`] = `
   cursor: pointer;
 }
 
-.c6:hover:not(:disabled) {
-  background-color: #f8f9fa;
-  color: #0d5257;
-}
-
 .c6:disabled {
   opacity: 0.5;
   cursor: unset;
+}
+
+.c6:hover:not(:disabled) {
+  background-color: #f8f9fa;
+  color: #0d5257;
 }
 
 .c4 {
@@ -135,5 +135,8 @@ exports[`should render correctly 1`] = `
       role="list"
     />
   </main>
+  <div
+    id="modal-root"
+  />
 </div>
 `;

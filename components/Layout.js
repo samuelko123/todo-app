@@ -38,6 +38,7 @@ export const Layout = (props) => {
 			<Main>
 				{children}
 			</Main>
+			<div id='modal-root' />
 		</>
 	)
 }
