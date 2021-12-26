@@ -4,8 +4,8 @@ import { Link } from './index'
 
 export const Header = styled.header`
     padding: 1rem;
-    background-color: ${props => props.theme.primary};
-    color: ${props => props.theme.light};
+    background-color: ${props => props.theme.brand};
+    color: ${props => props.theme.background};
     font-size: 1.25rem;
 `
 

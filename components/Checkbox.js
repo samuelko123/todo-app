@@ -13,7 +13,7 @@ import {
 } from 'react-icons/md'
 
 const CheckboxStyle = css`
-     color: ${props => props.theme.primary};
+     color: ${props => props.theme.brand};
      width: 1.5em;
      height: 1.5em;
      vertical-align: middle;

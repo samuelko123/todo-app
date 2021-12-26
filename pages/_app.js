@@ -20,19 +20,19 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    background-color: ${props => props.theme.light};
+    background-color: ${props => props.theme.background};
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 `
 
 const theme = {
-	primary: '#0d5257',
-	light: '#eeeeee',
-	dark: '#215259',
-	gray: '#808080',
-	danger: '#dc3545',
-	lightgray: 'rgba(0,0,0,0.25)',
+	brand: '#0d5257',
+	background: '#eeeeee',
+	btnText: '#eeeeee',
+	cancel: '#808080',
+	delete: '#dc3545',
+	border: 'rgba(0,0,0,0.25)',
 }
 
 const App = ({

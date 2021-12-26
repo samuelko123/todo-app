@@ -5,8 +5,7 @@ import { HiddenLabel } from './index'
 const Input = styled.input`
 	width: 100%;
     background-color: inherit;
-    border: 2px solid ${props => props.theme.lightgray};
-    color: ${props => props.theme.dark};
+    border: 2px solid ${props => props.theme.border};
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -14,7 +13,7 @@ const Input = styled.input`
 
     &:focus {
         outline: none;
-        box-shadow: 0px 0px 0.25rem ${props => props.theme.primary};
+        box-shadow: 0px 0px 0.25rem ${props => props.theme.brand};
     }
 `
 

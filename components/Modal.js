@@ -18,7 +18,7 @@ const ModalContainer = styled.div.attrs({ role: 'dialog' })`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: ${props => props.theme.light};
+    background-color: ${props => props.theme.background};
     border: 1px solid ${props => props.theme.gray};
     border-radius: 0.5rem;
     min-width: 300px;
@@ -31,7 +31,7 @@ const ModalHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid ${props => props.theme.lightgray};
+    border-bottom: 1px solid ${props => props.theme.border};
 `
 
 const ModalBody = styled.div`
@@ -45,7 +45,7 @@ const ModalFooter = styled.div`
     align-items: center;
     column-gap: 0.25rem;
     padding: 1rem;
-    border-top: 1px solid ${props => props.theme.lightgray};
+    border-top: 1px solid ${props => props.theme.border};
 `
 
 const ModalTitle = styled.h4`
