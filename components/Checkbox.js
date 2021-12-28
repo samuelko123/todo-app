@@ -3,10 +3,7 @@ import {
 	HiddenCheckbox,
 	HiddenLabel,
 } from './index'
-import {
-	forwardRef,
-	useState,
-} from 'react'
+import { forwardRef } from 'react'
 import {
 	MdOutlineCheckBox,
 	MdOutlineCheckBoxOutlineBlank,
@@ -31,23 +28,16 @@ export const Checkbox = forwardRef((props, ref) => {
 	const {
 		label,
 		onChange,
-		defaultChecked,
+		checked,
 		...checkboxProps
 	} = props
-
-	const [checked, setChecked] = useState(defaultChecked)
-
-	const handleChange = () => {
-		setChecked(!checked)
-		onChange()
-	}
 
 	return (
 		<label>
 			<HiddenCheckbox
 				ref={ref}
 				checked={checked}
-				onChange={handleChange}
+				onChange={onChange}
 				{...checkboxProps}
 			/>
 			{

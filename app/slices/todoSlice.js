@@ -5,16 +5,27 @@ const todoSlice = createSlice({
   initialState: [],
   reducers: {
     addTodo: (state, action) => {
-      const item = action.payload
+      const item = {
+        id: Date.now(),
+        ...action.payload
+      }
       state.push(item)
     },
     deleteTodo: (state, action) => {
-      const index = action.payload
-      state.splice(index, 1)
+      const id = action.payload
+      for (let i = state.length - 1; i >= 0; i--){
+        if (state[i].id === id){
+          state.splice(i, 1)
+        }
+      }
     },
     toggleTodo: (state, action) => {
-      const index = action.payload
-      state[index].completed = !state[index].completed
+      const id = action.payload
+      for(const item of state){
+        if (item.id === id){
+          item.completed = !item.completed
+        }
+      }
     }
   },
 })
@@ -25,5 +36,4 @@ export const {
   toggleTodo,
 } = todoSlice.actions
 
-export const selectTodos = (state) => state.todos
 export const todosReducer = todoSlice.reducer

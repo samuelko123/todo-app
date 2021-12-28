@@ -3,16 +3,17 @@ import {
 	screen,
 	waitFor,
 } from '@testing-library/react'
-import {within} from '@testing-library/dom'
+import { within } from '@testing-library/dom'
 import userEvent from '@testing-library/user-event'
 
 import App from '../pages/_app'
 import Page from '../pages/index'
+import { act } from 'react-dom/test-utils'
 
 it('should render correctly', async () => {
 
 	//============================================================
-	
+
 	// Arrange
 	render(<App Component={Page} />)
 
@@ -27,7 +28,6 @@ it('should render correctly', async () => {
 	const btnAdd = screen.getByRole('button', { name: 'Add' })
 
 	// Assert - Before
-	
 	expect(btnAdd).toBeDisabled()
 
 	// Action
@@ -57,34 +57,6 @@ it('should render correctly', async () => {
 		// Expect 1 item in TodoList
 		expect(list.children.length).toEqual(1)
 		expect(list.children[0]).toHaveTextContent(todoText)
-	})
-
-	//============================================================
-
-	// Arrange
-	const checkbox = screen.getByRole('checkbox', 'Complete Todo')
-	const listItem = screen.getByText(todoText)
-
-	// Assert - Before
-	expect(checkbox).not.toBeChecked()
-	expect(listItem).toHaveStyle('text-decoration: none')
-
-	// Action #1
-	userEvent.click(checkbox)
-
-	// Assert #1
-	await waitFor(() => {
-		expect(checkbox).toBeChecked()
-		expect(listItem).toHaveStyle('text-decoration: line-through')
-	})
-
-	// Action #2
-	userEvent.click(checkbox)
-
-	// Assert #2
-	await waitFor(() => {
-		expect(checkbox).not.toBeChecked()
-		expect(listItem).toHaveStyle('text-decoration: none')
 	})
 
 	//============================================================
@@ -158,4 +130,89 @@ it('should render correctly', async () => {
 	})
 
 	//============================================================
+})
+
+
+it('should filter correctly', async () => {
+
+	// Arrange
+	const data = ['Test1', 'Test2', 'Test3', 'Test4', 'Test5']
+
+	render(<App Component={Page} />)
+	const textbox = screen.getByRole('textbox')
+	const btnAdd = screen.getByRole('button', { name: 'Add' })
+	const btnFilter = screen.getByRole('button', { name: 'Filter' })
+
+	for (const text of data) {
+		userEvent.type(textbox, text)
+		await waitFor(() => {
+			expect(btnAdd).not.toBeDisabled()
+		})
+
+		userEvent.click(btnAdd)
+		await waitFor(() => {
+			expect(textbox.textContent).toEqual('')
+		})
+	}
+
+	const list = screen.getByRole('list')
+	// Assert
+	await waitFor(() => {
+		expect(list.children.length).toEqual(5)
+	})
+
+	//============================================================
+
+	// Action
+	let checkboxes = screen.getAllByRole('checkbox')
+	userEvent.click(checkboxes[0])
+	userEvent.click(checkboxes[2])
+	userEvent.click(checkboxes[4])
+
+	// Assert
+	await waitFor(() => {
+		expect(list.children.length).toEqual(2)
+	})
+
+	checkboxes = screen.getAllByRole('checkbox')
+	for(const checkbox of checkboxes){
+		expect(checkbox).not.toBeChecked()
+	}
+
+	//============================================================
+
+	// Action
+	userEvent.click(btnFilter)
+	const listbox01 = screen.getByRole('listbox')
+	const option01 = within(listbox01).getByText(/All/i)
+	act(() => {
+		userEvent.click(option01)
+	})
+
+	// Assert
+	await waitFor(() => {
+		expect(list.children.length).toEqual(5)
+		expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
+	})
+
+	//============================================================
+
+	// Action
+	userEvent.click(btnFilter)
+	const listbox02 = screen.getByRole('listbox')
+	const option02 = within(listbox02).getByText(/Completed/i)
+	act(() => {
+		userEvent.click(option02)
+	})
+
+	// Assert
+	await waitFor(() => {
+		expect(list.children.length).toEqual(3)
+		expect(screen.queryByRole('listbox')).not.toBeInTheDocument()
+	})
+
+	checkboxes = screen.getAllByRole('checkbox')
+	for(const checkbox of checkboxes){
+		expect(checkbox).toBeChecked()
+	}
 })

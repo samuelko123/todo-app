@@ -1,4 +1,5 @@
 import {
+	TodoFilter,
 	TodoForm,
 	TodoList,
 } from '../components'
@@ -7,6 +8,7 @@ const Page = () => {
 	return (
 		<>
 			<TodoForm />
+			<TodoFilter />
 			<TodoList />
 		</>
 	)

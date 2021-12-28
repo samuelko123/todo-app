@@ -14,14 +14,14 @@ import {
   REGISTER,
 } from 'redux-persist'
 
-import {
-  todosReducer
-} from './slices/todoSlice'
+import { todosReducer } from './slices/todoSlice'
+import { filterReducer } from './slices/filterSlice'
 
 import storage from "./storage-persist"
 
 const rootReducer = combineReducers({
   todos: todosReducer,
+  filter: filterReducer,
 })
 
 const persistConfig = {
