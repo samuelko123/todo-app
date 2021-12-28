@@ -80,15 +80,20 @@ export const TodoList = () => {
 	}, shallowEqual)
 
 	return (
-		<List>
-			{
-				todoIds.map(id =>
-					<TodoListItem
-						key={id}
-						id={id}
-					/>
-				)
-			}
-		</List>
+		<div>
+			<span>
+				No. of items: {todoIds.length}
+			</span>
+			<List>
+				{
+					todoIds.map(id =>
+						<TodoListItem
+							key={id}
+							id={id}
+						/>
+					)
+				}
+			</List>
+		</div>
 	)
 }
