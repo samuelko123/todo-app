@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
 
 import {
 	ThemeProvider,
-	createGlobalStyle, 
+	createGlobalStyle,
 } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -35,21 +35,34 @@ const theme = {
 	border: 'rgba(0,0,0,0.25)',
 }
 
-const App = ({
-	Component,
-	pageProps,
-}) => {
+export const Wrapper = (props) => {
+	const {
+		store,
+		children,
+	} = props
+
 	return (
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persistor}>
 				<ThemeProvider theme={theme}>
 					<Layout title='Todo App'>
 						<GlobalStyle />
-						<Component {...pageProps} />
+						{children}
 					</Layout>
 				</ThemeProvider>
 			</PersistGate>
 		</Provider>
+	)
+}
+
+const App = ({
+	Component,
+	pageProps,
+}) => {
+	return (
+		<Wrapper store={store}>
+			<Component {...pageProps} />
+		</Wrapper>
 	)
 }
 
