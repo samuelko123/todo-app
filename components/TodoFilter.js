@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
-import { useDispatch } from 'react-redux'
+import {
+	useDispatch,
+	useSelector,
+} from 'react-redux'
 import { updateStatusFilter } from '../app/slices/filterSlice'
 import { STATUS_FILTER } from '../app/constants'
 
@@ -13,15 +16,17 @@ import {
 const FilterOption = styled(ListItem)`
     cursor: pointer;
     text-transform: capitalize;
+	background-color: ${props => props.active ? props.theme.brand : 'inherit'};
+	color: ${props => props.active ? props.theme.btnText : 'inherit'};
 
     &:hover {
-        background-color: ${props => props.theme.brand};
-        color: ${props => props.theme.background};
+        background-color: ${props => props.active ? props.theme.brand : props.theme.hover};
     } 
 `
 
 export const TodoFilter = () => {
 	const dispatch = useDispatch()
+	const currentFilter = useSelector(state => state.filter.status)
 
 	return (
 		<Dropdown label='Filter'>
@@ -33,6 +38,7 @@ export const TodoFilter = () => {
 								key={key}
 								role='option'
 								onClick={() => dispatch(updateStatusFilter(STATUS_FILTER[key]))}
+								active={STATUS_FILTER[key] === currentFilter}
 							>
 								{key.toLowerCase()}
 							</FilterOption>

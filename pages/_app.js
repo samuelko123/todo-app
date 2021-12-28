@@ -31,7 +31,8 @@ const theme = {
 	background: '#eeeeee',
 	btnText: '#eeeeee',
 	cancel: '#808080',
-	delete: '#dc3545',
+	delete: '#bb0000',
+	hover: 'rgba(0,0,0,0.2)',
 	border: 'rgba(0,0,0,0.25)',
 }
 
