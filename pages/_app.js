@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const theme = {
-	brand: '#0d5257',
+	brand: '#123499',
 	background: '#eeeeee',
 	btnText: '#eeeeee',
 	cancel: '#808080',
